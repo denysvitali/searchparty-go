@@ -1,0 +1,10 @@
+FROM nixos/nix
+
+RUN nix-env -iA nixpkgs.buf \
+    nixpkgs.protobuf \
+    nixpkgs.go \
+    nixpkgs.protoc-gen-go \
+    nixpkgs.protoc-gen-go-grpc \
+    nixpkgs.grpc-gateway
+
+ENTRYPOINT ["buf"]

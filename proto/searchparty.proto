@@ -1,0 +1,49 @@
+syntax = "proto3";
+package it.denv.searchparty_go;
+
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/denysvitali/searchparty-go/proto";
+
+message Device {
+  string id = 1;
+  string name = 2;
+  string model = 3;
+  google.protobuf.Timestamp pairing_date = 4;
+  string identifier = 5;
+  string stable_identifier = 6;
+}
+
+message Location {
+  float latitude = 1;
+  float longitude = 2;
+  int32 accuracy = 3;
+  google.protobuf.Timestamp timestamp = 4;
+}
+
+message GetDevicesRequest {}
+message GetDevicesResponse {
+  repeated Device devices = 1;
+}
+
+message GetDeviceLocationRequest {
+  string id = 1;
+}
+message GetDeviceLocationResponse {
+  repeated Location locations = 1;
+}
+
+service SearchParty {
+  rpc GetDevices(GetDevicesRequest) returns (GetDevicesResponse) {
+    option(google.api.http) = {
+      get: "/v1/devices"
+    };
+  }
+
+  rpc GetDeviceLocation(GetDeviceLocationRequest) returns (GetDeviceLocationResponse) {
+    option(google.api.http) = {
+      get: "/v1/devices/{id}/location"
+    };
+  }
+}

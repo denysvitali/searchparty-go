@@ -1,0 +1,4 @@
+version: v1
+name: buf.build/denysvitali/searchparty-go
+deps:
+  - buf.build/googleapis/googleapis

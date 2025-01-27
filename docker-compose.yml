@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgis/postgis:16-3.4-alpine
+    environment:
+      POSTGRES_USER: searchparty
+      POSTGRES_PASSWORD: searchparty
+      POSTGRES_DB: searchparty
+    ports:
+      - "5438:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  anisette:
+    image: dadoum/anisette-v3-server
+    ports:
+      - "127.0.0.1:6969:6969"
+    volumes:
+      - anisette-data:/home/Alcoholic/.config/anisette-v3/lib/
+
+volumes:
+  pgdata:
+  anisette-data:

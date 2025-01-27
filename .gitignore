@@ -1,0 +1,7 @@
+/*.json
+/*.keys
+/beacons
+
+# Containing sensitive information for now:
+/dynamic_key_test.go
+/gen
