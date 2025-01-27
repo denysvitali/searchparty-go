@@ -1,4 +1,4 @@
-# SearchParty Go
+# searchparty-go
 
 A server implementation for interacting with Apple's Find My network.
 
@@ -17,11 +17,11 @@ Check out the companion project [searchparty-keys](https://github.com/denysvital
 
 ## Disclaimer
 
-> ![NOTE]
+> [!NOTE]
 > This project is currently under active development and should be considered a work in progress.
 > Functionality may change, and stability is not guaranteed.
 
-> ![WARNING]
+> [!WARNING]
 > This project is not affiliated with, endorsed by, or connected to Apple Inc. or any of its subsidiaries.
 > Use of this software may violate Apple's terms of service. Proceed at your own risk.
 > To mitigate potential risks, it is strongly recommended to use a dedicated Apple ID for this purpose.
